@@ -1,0 +1,113 @@
+doctype html
+html(lang='en')
+  head
+    title Timeline
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    // <link rel="stylesheet" href="bootstrap.min.css">
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+    
+    // <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    link(rel='stylesheet', href='/css/timeline.css')
+  body
+    style.
+      .describe {
+      min-height: 280px;
+      resize: vertical;
+      }
+    #post-success-alert
+    .container
+      // <h2>Large Modal</h2>
+      // Trigger the modal with a button
+      // <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Large Modal</button>
+      // Modal
+      #myModal.modal.fade(role='dialog')
+        .modal-dialog.modal-lg
+          .modal-content
+            .modal-header
+              button.close(type='button', data-dismiss='modal') ×
+              center
+                h4.modal-title.text-primary Make a post or a discussion
+            .modal-body
+              // Form for Post submission
+              form(action = '/timeline/post',method = 'POST')
+                .form-group
+                  label(for='title') Title:
+                  input#title.form-control(type='text', name ='title',autocomplete = 'off',required)
+                //
+                  <div class="form-group">
+                  <label for="description">Description:</label>
+                  <input type="text" class="form-control describe" id="description">
+                  </div>
+                .form-group
+                  label(for='description') Description:
+                  textarea#description.form-control.describe(rows='3',name = 'description',autocomplete = 'off','required')
+                //
+                  <div class="checkbox">
+                  <label><input type="checkbox"> Confirm</label>
+                  </div>
+                button.btn.btn-primary#submit-post(type='submit') post
+            .modal-footer
+              button.btn.btn-danger(type='button', data-dismiss='modal') Close
+    // post float icon
+    .post-pencil(title='write a post', data-toggle='modal', data-target='#myModal')
+      i.material-icons.post-icon 
+    // Navbar
+    nav.navbar.navbar-fixed-top
+      .container-fluid
+        // Non-collapsible Navbar
+        .navbar-header
+          // Nav button for small screens
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          // CLOSE Nav button for small screens CLOSE
+          a.navbar-brand(href='#') Intra Quora
+        // collapsible Navbar
+        #myNavbar.collapse.navbar-collapse
+          #profile-img
+            img(src='#{userInfo.photos[0].value}')
+          //
+            <ul class="nav navbar-nav">
+            <li><a href="#">Home</a></li>
+            </ul>
+          ul.nav.navbar-nav.navbar-right
+            li
+              a(href='http://localhost:3000/profile') profile
+            // <li><a href="#"> Post</a></li>
+            li
+              a(href='http://localhost:3000/logout')
+                // <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                | logout
+    // search bar
+    .container
+      .row
+        .col-sm-6.col-sm-offset-3.col-md-8
+          #imaginary_container
+            .input-group.stylish-input-group
+              input.form-control(type='text', placeholder='Search')
+              span.input-group-addon
+                button(type='submit')
+                  span.glyphicon.glyphicon-search
+    // Posts
+    #posts-container
+      .posts
+        .post-info
+          .post-photo
+            img(src='#{userInfo.photos[0].value}')
+          p.post-username #{userInfo.displayName}
+          p.post-time 2 hrs ago
+        .post-title
+          p what is the best event in avishkar at mnnit allahabad?
+        .post-description
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit, purus nec auctor sodales, risus ligula dapibus erat, et facilisis risus diam mattis massa. Sed mattis consequat suscipit. Nulla dapibus condimentum neque, a tempus nisl. Vivamus quis nisl venenatis, varius diam nec, porttitor lectus. Suspendisse quis vehicula odio. Fusce at dui vitae diam venenatis dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non libero vel massa molestie aliquet. Curabitur sed finibus nisi, a mattis lectus. Fusce vitae nisi pretium, auctor metus et, semper justo. Morbi a vehicula nibh. Cras fermentum feugiat velit, ac aliquam nisi iaculis nec. Mauris pulvinar purus tincidunt purus venenatis, sed lacinia leo aliquam. Nunc eget orci malesuada, lacinia turpis eu, facilisis massa.
+            | Vivamus elit lacus, efficitur quis convallis a, finibus sed neque. Praesent vitae sollicitudin turpis. Ut molestie velit in sapien porta, in egestas augue sodales.
+      .posts
+      .posts
+      .posts
+    script(src='/scripts/jquery.js')
+    script(src='/scripts/bootstrap.min.js')
+    script(src='/scripts/timeline.js')

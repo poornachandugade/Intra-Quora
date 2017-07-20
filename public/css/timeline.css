@@ -1,0 +1,290 @@
+
+#post-success-alert{
+    width: 300px;
+    height: 30px;
+    background-color: #d0b27c;
+    z-index: 2000;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    display: none;
+}
+#post-success-alert p{
+        margin: 0;
+        color: white;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%,-50%);
+}
+
+/*float pencil CSS */
+.post-pencil{
+    background-color: #23ac86;
+    height: 66px;
+    width: 66px;
+    border-radius: 100%;
+    position: fixed;
+    bottom: 20px;
+    right: 25px;
+    z-index: 5;
+    box-shadow: 0px 0px 8px  gray;
+    cursor: pointer;
+}
+.post-icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: whitesmoke;
+}
+
+/*Write a post and mask*/
+
+/*
+#mask{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    overflow: hidden;   
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 1000;
+    //display: none;
+}
+#write-post{
+    width: 500px;
+    height: 480px;
+    background-color: #cccccc;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    //display: none;
+    padding: 5px 50px;
+
+}
+#write-post-form{
+
+}
+.post-input{
+    padding: 2px 5px;
+    border: 1px solid gray;
+    margin:8px 0px;
+    font-size: 12px;
+}
+.post-input:focus{
+    outline-color: midnightblue;
+}
+#post-title{
+    width: 100%;
+    height: 32px;
+
+}
+#post-description{
+    width: 100%;
+    height: 120px;
+   
+}
+#submit-post{
+    width:80px;
+    height: 25px;
+    background-color: #23ac86;
+    border: none;
+    font-size: 15px;
+    margin: 5px 0px;
+}
+*/
+
+/*Nav CSS*/
+nav{
+    background-color: #23ac86;
+    box-shadow: 0px 2px 5px gray;
+   
+    
+}
+#profile-img{
+    height: 28px;
+    width: 28px;
+    position: absolute;
+    top: 50%;
+    right: 180px;
+    transform: translateY(-50%);
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0;
+}
+@media (max-width: 768px){
+    #profile-img{
+        display: none;
+    }
+}
+#profile-img img{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+
+}
+#profile-link{
+    padding: 0;
+}
+.container-fluid{
+    border-radius: 0;
+
+}
+.nav li a{
+    color: white;
+    font-size: 20px;
+}
+
+.nav li a:hover{
+    color: black;
+    background-color: #23ac86;
+
+}
+
+
+.navbar-header a{
+    color: white;
+    font-size: 20px;
+    font-family: 'Montserrat',sans-serif;
+ 
+}
+
+.navbar-header button{
+   border: 2px solid white;
+   
+}
+
+.icon-bar{
+    background-color: white;
+}
+
+.navbar-header a:hover{
+    color: black;
+    opacity: 0.6;
+    text-decoration: none;
+}
+
+
+/*search bar CSS */
+@media (min-width: 992px){
+    .col-sm-offset-3{
+    margin-left: 16%;
+}
+}
+#imaginary_container{
+    margin-top:60px; /* Don't copy this */
+}
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+
+/*Posts CSS */
+
+body{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  
+}
+#posts-container{
+    width: 100%;
+    min-height: 300px;
+    background-color: #cccccc;
+    padding: 0px 0px 30px 0px;
+    position: relative;
+    top: 10px;
+    left: 0px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  
+}
+.posts{
+    width:800px;
+    min-height:280px;
+    background-color: whitesmoke;
+    flex-direction: row;
+    margin-top: 50px;
+ 
+}
+.post-info{
+    width:100%;
+    height:50px;
+    background-color: #23ac86;
+    position: relative;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+  
+}
+.post-photo{
+    width:30px;
+    height: 30px;
+    background-color: black;
+    position: absolute;
+    left: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    overflow: hidden;
+}
+.post-photo img{
+    width: 100%;
+    height: 100%;
+}
+.post-username{
+    color:white;
+    position:relative;
+    left:18%;
+    top:50%;
+    transform: translateY(-50%);
+    margin: 0;
+    float: left;
+    font-size: 90%;
+}
+.post-time{
+    color:white;
+    position:relative;
+    right:10%;
+    top:50%;
+    transform: translateY(-50%);
+    margin: 0;
+    float: right;
+}
+.post-title{
+    font-size: 25px;
+    min-height: 10px;
+    width:100%;
+    background-color:#e6e6e6;
+    padding:10px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.post-description{
+    width:100%;
+    min-height:100px;
+    overflow: hidden;
+    padding:10px;
+    box-sizing: border-box;
+    text-align: justify;
+}
+
+
